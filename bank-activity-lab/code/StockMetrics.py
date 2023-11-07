@@ -58,3 +58,4 @@ class StockMetrics(StockData):
                     standard_deviations.append(rounded_std_dev)
         return standard_deviations
 
+
