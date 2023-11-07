@@ -33,9 +33,30 @@ class StockMetrics(StockData):
     def median02(self):
         """pt2
         """
-        ...
+        medians = []
+        for row in self.data:
+            data_row = row[1:]
+            y = [float (x) for x in data_row if x !=""] 
+            if y: 
+                median = stats.median(y)
+                medians.append(median)
+        return medians
+
+
 
     def stddev03(self):
         """pt3
         """
-        ...
+        standard_deviations = []
+        for row in self.data:
+            data_row = row[1:]
+            y = [float(x) for x in data_row if x !=""]
+            if y: 
+                if len(y) > 1:
+                    std_dev = stats.stdev(y)
+                    rounded_std_dev = round(std_dev, 3)
+                    standard_deviations.append(rounded_std_dev)
+        return standard_deviations
+
+
+
